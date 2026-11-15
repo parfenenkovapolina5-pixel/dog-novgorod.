@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великий Новгород для туристов с собаками</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #F3E9D8;
+            color: #3A3A3A;
+        }
+
+        .header {
+            width: 100%;
+            padding: 24px 28px;
+            background: linear-gradient(135deg, #4A9E7E 0%, #5DCC8C 100%);
+            color: #fff;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 28px;
+            box-shadow: 0 6px 18px rgba(74, 158, 126, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, #3E7D62, #5DCC8C);
+        }
+        .header h1 { margin: 0; font-size: 26px; line-height: 1.2; }
+        .header p { margin: 10px 0 0; font-size: 15px; opacity: 0.85; }
+
+        /* Блок-контейнер */
+        .section {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            background: #FFF8E7;
+            border: 1px solid #D9C9A8;
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            margin: 0 0 20px;
+            font-size: 22px;
+            color: #4A9E7E;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Список */
+        .list-title {
+            font-size: 20px;
+            color: #4A9E7E;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 16px 18px;
+            background: #FFF8E7;
+            border: 1px solid #E8E0C8;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+            line-height: 1.4;
+            transition: all 0.2s;
+        }
+        .list-item:hover {
+            background: #E8F3E8;
+            border-color: #4A9E7E;
+            transform: translateY(-2px);
+        }
+        .rank {
+            font-size: 12px;
+            color: #8a8a8a;
+            white-space: nowrap;
+        }
+
+        /* Карточка */
+        .card-row {
+            margin-bottom: 24px;
+        }
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 12px;
+            font-size: 22px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            padding: 6px 12px;
+            background: #E8F0E8;
+            border: 1px solid #D9C9A8;
+            border-radius: 18px;
+            color: #5a6b4a;
+        }
+
+        .rating-line {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 18px;
+            color: #8a8a8a;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .info {
+            line-height: 1.5;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 14px;
+        }
+        .sub {
+            font-size: 12px;
+            color: #8a8a8a;
+            margin-bottom: 10px;
+        }
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 11px;
+            border: 1px solid #e8d5b3;
+            border-radius: 18px;
+            font-size: 12px;
+            background: #fff3d6;
+            color: #6b5b3a;
+        }
+
+        .tip {
+            background: #FFF3D6;
+            border: 1px solid #E8C15E;
+            border-radius: 22px;
+            padding: 14px;
+            margin-top: 16px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .tip-label {
+            display: block;
+            margin-bottom: 6px;
+            color: #8a6f3b;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .link {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #4A9E7E 0%, #3E7D62 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 18px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+        .link:hover { background: #3E7D62; }
+
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            background: #E8E0C8;
+            color: #6b5b3a;
+            border: none;
+            border-radius: 18px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover { background: #D8CFA8; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🐕 Великий Новгород для туристов с собаками</h1>
+    <p>5 удобных мест. Выбирай строку — и читай описание, советы и маршрут.</p>
+</div>
+
+<div style="width: 100%; max-width: 480px; margin: 0 auto;">
+
+    <div style="background: #FFF8E7; border: 1px solid #D9C9A8; border-radius: 22px; padding: 24px; margin-bottom: 28px; box-shadow: 0 6px 18px rgba(0,0,0,0.05);">
+        <h3 style="margin: 0 0 14px; font-size: 20px; color: #4A9E7E; display: flex; align-items: center; gap: 8px;">📋 Содержание</h3>
+
+        <a href="#place1" class="list-item">
+            Кремлёвский парк
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;padding-left:12px;">4 из 5</span>
+        </a>
+
+        <a href="#place2" class="list-item">
+            Парк «30 лет Октября»
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;padding-left:12px;">5 из 5</span>
+        </a>
+
+        <a href="#place3" class="list-item">
+            Набережная Александра Невского
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;padding-left:12px;">4 из 5</span>
+        </a>
+
+        <a href="#place4" class="list-item">
+            Озеро Ильмень (спуск у Перыни)
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;padding-left:12px;">5 из 5</span>
+        </a>
+
+        <a href="#place5" class="list-item">
+            «Красное поле»
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;padding-left:12px;">5 из 5</span>
+        </a>
+    </div>
+
+    <div style="width: 100%; max-width: 480px; margin: 0 auto;">
+
+        <h2 style="font-size:22px;color:#4A9E7E;margin-bottom:18px;display:flex;align-items:center;gap:10px;">📄 Описания</h2>
+
+        <a id="place1"></a>
+        <div style="background:#FFF8E7;border:1px solid #D9C9A8;border-radius:22px;padding:24px;margin-bottom:32px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:22px;">Кремлёвский парк 🌳 <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;background:#E8F0E8;border:1px solid #D9C9A8;border-radius:18px;color:#5a6b4a;">4 из 5</span></div>
+            <div style="display:flex;gap:4px;margin-bottom:18px;color:#8a8a8a;font-size:13px;line-height:1.4;">🐾🐾🐾🐾 — хорошо, но есть нюансы</div>
+            <div style="line-height:1.6;font-size:14px;color:#333;margin-bottom:14px;">Исторический центр: тень от старых деревьев, ухоженные газоны. Идеально для спокойных прогулок. В сезон здесь много туристов.</div>
+            <div style="margin-bottom:12px;">Удобства:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;"><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Тень</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Скамейки</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;">Урны</span></div>
+            <div style="background:#FFF3D6;border:1px solid #E8C15E;border-radius:22px;padding:14px;margin-top:16px;font-size:13px;line-height:1.5;"><strong class="tip-label">💡 Совет</strong> В выходные здесь очень людно. Лучше приходить утром или вечером.</div>
+            <a href="https://yandex.ru/maps/24/veliky-novgorod/?z=16&ll=31.2710%2C58.5214" class="link">Открыть маршрут в Яндекс.Картах</a>
+            <button class="back-btn" type="button" onclick="location.href='#place1'">← К списку</button>
+        </div>
+
+        <a id="place2"></a>
+        <div style="background:#FFF8E7;border:1px solid #D9C9A8;border-radius:22px;padding:28px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+            <div style="display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:24px;">Парк «30 лет Октября» 🌳 <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:5px 10px;background:#E8F0E8;border:1px solid #D9C9A8;border-radius:18px;color:#5a6b4a;">5 из 5</span></div>
+            <div style="display:flex;gap:4px;margin-bottom:18px;color:#8a8a8a;font-size:13px;line-height:1.4;">🐾🐾🐾🐾🐾 — идеально для собак</div>
+            <div style="line-height:1.5;font-size:14px;margin-bottom:14px;">Один из самых больших парков города (>25 га) на Торговой стороне. Просторные зелёные зоны и открытые поляны — отличное место для игр с мячом и фрисби.</div>
+            <div style="margin-bottom:12px;">Удобства:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;"><span style="display:inline-block;padding:6px 10px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Просторные поляны</span><span style="display:inline-block;padding:6px 10px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Трава</span><span style="display:inline-block;padding:6px 10px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;">Скамейки</span></div>
+            <div style="background:#FFF3D6;border:1px solid #E8C15E;border-radius:22px;padding:14px;margin-top:16px;font-size:13px;line-height:1.5;"><strong class="tip-label">💡 Совет</strong>Бери воду для собаки: на открытых полянах почти нет тени.</div>
+            <a href="https://yandex.ru/maps/24/veliky-novgorod/?z=16&ll=31.3174%2C58.5323" class="link">Открыть маршрут в Яндекс.Картах</a>
+            <button type="button" class="back-btn" onclick="location.href='#place2'">← К списку</button>
+        </div>
+
+        <a id="place3"></a>
+        <div style="background:#FFF8E7;border:1px solid #D9C9A8;border-radius:22px;padding:28px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+            <div class="title">Набережная Александра Невского 🌊 <span class="rating-badge">4 из 5</span></div>
+            <div class="rating-line">🐾🐾🐾🐾 — хорошо, но есть нюансы</div>
+            <div class="info">Живописный маршрут вдоль Волхова. Твёрдое покрытие (удобно после дождя), красивые виды на Детинец.</div>
+            <div style="margin-bottom:12px;">Удобства:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;"><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Твёрдое покрытие</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Виды</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;">Скамейки</span></div>
+            <div class="tip-box"><span class="tip-label">💡 Совет</span>Это плитка и брусчатка. В жару может быть жарко, обязательно бери воду.</div>
+            <a href="https://yandex.ru/maps/24/veliky-novgorod/?z=16&ll=31.2867%2C58.5250" class="link">Открыть маршрут в Яндекс.Картах</a>
+            <button class="back-btn" type="button" onclick="location.href='#place3'">← К списку</button>
+        </div>
+
+        <a id="place4"></a>
+        <div style="background:#FFF8E7;border:1px solid #D9C9A8;border-radius:22px;padding:28px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+            <div class="title">Озеро Ильмень 🏞️ <span class="rating-badge">5 из 5</span></div>
+            <div class="rating-line">🐾🐾🐾🐾🐾 — идеально для собак</div>
+            <div class="info">Это природный объект, а не городской парк. Огромная территория, дикие пляжи, возможность купания в тёплое время. Точка — спуск у Перынского скита.</div>
+            <div style="margin-bottom:12px;">Удобства: <span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Доступ к воде</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Природа</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;">Открытое пространство</span></div>
+            <div style="background:#FFF3D6;border:1px solid #E8C15E;border-radius:22px;padding:14px;margin-top:16px;font-size:13px;line-height:1.5;"><strong class="tip-label">💡 Совет</strong>Подъезды к воде могут быть сложными. Это вариант для поездки на машине («один день + природа»).</div>
+            <a href="https://yandex.ru/maps/24/veliky-novgorod/?z=15&ll=31.2748%2C58.4733" class="link">Открыть маршрут в Яндекс.Картах</a>
+            <button class="back-btn" type="button" onclick="location.href='#place4'">← К списку</button>
+        </div>
+
+        <a id="place5"></a>
+        <div style="background:#FFF8E7;border:1px solid #D9C9A8;border-radius:22px;padding:28px;margin-bottom:32px;box-shadow:0 6px 18px rgba(0,0,0,0.05);">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:22px;">«Красное поле» 🌾 <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:5px 10px;background:#E8F0E8;border:1px solid #D9C9A8;border-radius:18px;color:#5a6b4a;">5 из 5</span></div>
+            <div style="display:flex;gap:4px;margin-bottom:18px;color:#8a8a8a;font-size:13px;line-height:1.4;">🐾🐾🐾🐾🐾 — идеально для собак</div>
+            <div style="line-height:1.5;font-size:14px;margin-bottom:14px;">Рекреационная зона на окраине города: поля, перелески, минимум людей. Зона для свободного выгула.</div>
+            <div style="margin-bottom:14px;">Удобства:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;"><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Поля</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;color:#6b5b3a;margin-right:8px;">Лес</span><span style="display:inline-block;padding:7px 11px;border:1px solid #e8d5b3;border-radius:18px;font-size:12px;background:#fff3d6;">Свободный выгул</span></div>
+            <div style="background:#FFF3D6;border:1px solid #E8C15E;border-radius:22px;padding:14px;margin-top:16px;font-size:13px;line-height:1.5;"><strong class="tip-label">💡 Совет</strong>Проверяй актуальную информацию перед поездкой: статус территории может меняться. Идеально для долгих выездов.</div>
+            <a href="https://yandex.ru/maps/24/veliky-novgorod/?z=15&ll=31.3174%2C58.5323" class="link">Открыть маршрут в Яндекс.Картах</a>
+            <button class="back-btn" type="button" onclick="location.href='#place5'">← К списку</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
